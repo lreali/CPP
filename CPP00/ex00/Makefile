@@ -1,4 +1,16 @@
-NAME = magaphone
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/12 04:55:10 by ereali            #+#    #+#              #
+#    Updated: 2022/03/12 04:55:11 by ereali           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = megaphone
 
 INC_DIR = 	$(shell find includes -type d)
 
@@ -39,7 +51,7 @@ $(NAME): $(OBJ)
 				$(CC) $(OBJ) $(CFLAGS) $(IFLAGS) -o $(NAME)
 				@echo " DONE"
 
-$(OBJ_DIR)/%.o : %.c
+$(OBJ_DIR)/%.o : %.cpp
 				@mkdir -p $(OBJ_DIR)
 				@echo "Compiling $< ...\c"
 				@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<

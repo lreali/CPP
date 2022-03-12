@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 04:09:52 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/12 04:43:38 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/12 04:51:36 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ int	main(int argc, char **argv)
 	}
 	while (argv[i])
 	{
-		std::cout << ft_string_toupper(argv[i]) << std::endl ;
+		std::cout << ft_string_toupper(argv[i]);
 		i++;
 	}
+	std::cout << std::endl;
 	return (0);
 }
