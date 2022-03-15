@@ -6,21 +6,21 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 04:09:52 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/12 04:51:36 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/15 02:49:03 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> // acces : cin et cout
 
-char *ft_string_toupper(char *str)
+std::string	ft_string_toupper(std::string str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (str && str[i])
+	while (str.length() > i)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
+
+		str[i] = toupper(str[i]);
 		i++;
 	}
 	return (str);
