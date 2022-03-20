@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 05:01:39 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/19 18:05:08 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/20 22:28:30 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,24 @@ int main(void)
 {
 	PhoneBook MyPhoneBook;
 	std::string buff;
-	std::string tab[3] = {"SEARCH", "ADD"};
-	std::size_t i;
 
+	std::cout << "-------------HOME---------" << std::endl;
+	std::cout << "You can use : ADD to add a contact, SEARCH to find a contact already add, EXIT to exit" << std::endl;
 	while (buff != "EXIT")
 	{
-		i = 0;
 		std::cin >> buff;
-		while (i < 2 && buff != tab[i])
-			i++;
-		if (i == 0)
+		if (buff == "SEARCH")
+		{
 			MyPhoneBook.Search();
-		if (i == 1)
+			std::cout << "You're back to home" << std::endl;
+		}
+		else if (buff == "ADD")
+		{
 			MyPhoneBook.AddContact();
+			std::cout << "You're back to home" << std::endl;
+		}
+		else if (buff != "EXIT")
+			std::cout << "Please enter a valid command : ADD to add a contact, SEARCH to find a contact already add, EXIT to exit" << std::endl;
 	}
 	return (0);
 }
