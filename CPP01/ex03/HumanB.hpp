@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 04:06:04 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 05:27:02 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/21 22:41:05 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	~HumanB();
 
 private:
-	Weapon *_type;
 	std::string _name;
+	Weapon *_type;
 };
 #endif
