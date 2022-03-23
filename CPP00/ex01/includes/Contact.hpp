@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 03:15:19 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/18 19:45:25 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/20 22:51:14 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Contact
 
 	public:
 		Contact();
-		// Contact(std::string first, std::string last, std::string surnom, std::string secret);
 		void SetFirst(std::string first);
 		void SetLast(std::string last);
 		void SetNickname(std::string nickname);

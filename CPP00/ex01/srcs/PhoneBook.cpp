@@ -6,13 +6,12 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 04:30:51 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/20 22:33:22 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/20 22:52:04 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iomanip>
-// Constructeur , destructeur , ft search et ft_add
 
 PhoneBook::PhoneBook() : _nbContact(0), _list() {}
 

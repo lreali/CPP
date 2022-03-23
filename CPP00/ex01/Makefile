@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 04:55:10 by ereali            #+#    #+#              #
-#    Updated: 2022/03/15 05:16:01 by ereali           ###   ########.fr        #
+#    Updated: 2022/03/21 02:06:00 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
-SRC = mapbook.cpp PhoneBook.cpp Contact.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 ##List every .h found inside INC_DIR
 INC =
