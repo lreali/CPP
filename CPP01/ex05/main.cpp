@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 04:07:18 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 23:02:24 by ereali           ###   ########.fr       */
+/*   Created: 2022/03/23 01:17:11 by ereali            #+#    #+#             */
+/*   Updated: 2022/03/23 02:14:12 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-Weapon::Weapon(std::string type)
+int	main()
 {
-	_type = type;
-}
+	Harl  karen;
+	std::string buff;
 
-std::string const & Weapon::getType()
-{
-	return (_type);
+	while (buff != "EXIT")
+	{
+		std::cin >> buff;
+		karen.complain(buff);
+	}
+	return (0);
 }
-
-void	Weapon::setType(std::string type)
-{
-	_type = type;
-}
-
-Weapon::~Weapon()
-{}

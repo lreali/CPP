@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 04:07:18 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 23:02:24 by ereali           ###   ########.fr       */
+/*   Created: 2022/03/23 01:17:07 by ereali            #+#    #+#             */
+/*   Updated: 2022/03/23 02:05:08 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
-Weapon::Weapon(std::string type)
+class Harl
 {
-	_type = type;
-}
 
-std::string const & Weapon::getType()
-{
-	return (_type);
-}
+public:
+	Harl();
+	void	complain(std::string level);
+	~Harl();
 
-void	Weapon::setType(std::string type)
-{
-	_type = type;
-}
-
-Weapon::~Weapon()
-{}
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+};
+typedef void (Harl::*fct)(void);

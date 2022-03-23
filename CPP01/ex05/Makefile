@@ -6,11 +6,11 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2022/03/21 23:34:47 by ereali           ###   ########.fr        #
+#    Updated: 2022/03/23 02:14:28 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Violence
+NAME = Harl
 
 INC_DIR = 	$(shell find includes -type d)
 
@@ -27,7 +27,7 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
-SRC = HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
+SRC = main.cpp Harl.cpp
 
 ##List every .h found inside INC_DIR
 INC =

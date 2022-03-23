@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 04:05:59 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 22:41:36 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/21 23:34:18 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	HumanB::attack()
 		std::cout << _name << " run away" << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon type)
+void	HumanB::setWeapon(Weapon &type)
 {
-	*_type = type;
+	_type = &type;
 }
 
 Weapon * HumanB::getWeapon()
@@ -37,5 +37,4 @@ Weapon * HumanB::getWeapon()
 }
 
 HumanB::~HumanB()
-{
-}
+{}

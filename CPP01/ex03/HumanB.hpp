@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 04:06:04 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 22:41:05 by ereali           ###   ########.fr       */
+/*   Updated: 2022/03/21 23:35:18 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class HumanB
 public:
 	HumanB(std::string name);
 	void attack();
-	void setWeapon(Weapon type);
-	Weapon *getWeapon();
+	void setWeapon(Weapon &type);
+	Weapon * getWeapon();
 	~HumanB();
 
 private:
