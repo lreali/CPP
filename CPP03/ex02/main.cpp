@@ -6,15 +6,16 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 04:54:52 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/09 18:50:39 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/09 19:56:06 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) {
-	ClapTrap a("A");
-	ClapTrap clapy("clapy");
+	ClapTrap *s = new FragTrap("Piou");
+	FragTrap a("A");
+	FragTrap clapy("Clapy");
 
 	clapy.attack("Poubelle1");
 	clapy.attack("Poubelle2");
@@ -32,10 +33,12 @@ int main( void ) {
 	clapy.attack("Poubelle12");
 	clapy.attack("Poubelle");
 	clapy.attack("Poubelle");
-	ClapTrap clap(a);
-	clap.attack("Otters");
+	clapy.highFivesGuys();
 	a.takeDamage(8);
 	a.takeDamage(4);
 	a.beRepaired( 2 );
+	s->attack("Poubelle");
+
+	delete s;
 	return 0;
 }

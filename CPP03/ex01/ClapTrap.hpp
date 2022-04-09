@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:42:57 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/09 18:00:54 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/09 19:44:35 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ public:
 	void setName(std::string const name);
 	std::string	getName(void) const;
 
-	void attack(const std::string& target);
+	virtual void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	ClapTrap & operator=(ClapTrap const & rhs);
-	~ClapTrap();
-private:
+	virtual ~ClapTrap();
+protected:
 	std::string _name;
 	int _HitPoint;
 	int _AttackDamage;

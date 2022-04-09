@@ -59,7 +59,6 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 	_EnergyPoint = rhs._EnergyPoint;
 	return (*this);
 }
-
 void ClapTrap::attack(const std::string& target)
 {
 	if (_EnergyPoint < 1 || _HitPoint <= 0)
@@ -82,8 +81,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	if (_EnergyPoint < 1 || _HitPoint <= 0)
 		return ;
 	_HitPoint = _HitPoint + amount;
-	if (_HitPoint > 10)
-		_HitPoint = 10;
 	std::cout << "ClapTrap "<< _name << " is saved, and win " << amount << " Hitpoint! Now have "<< _HitPoint << " HP." << std::endl;
 	_EnergyPoint--;
 
