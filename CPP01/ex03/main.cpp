@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 04:06:09 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/21 23:37:00 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/09 02:35:46 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	Weapon  club = Weapon("Pitbull");
+	HumanA bob("Bob", club);
+	HumanB rick("Rick");
+	bob.attack();
+	rick.attack();
 	return 0;
 }

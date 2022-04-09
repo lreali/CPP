@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 23:48:26 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/23 00:40:41 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/09 02:48:09 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	buff = ft_replace(buff, argv[2], argv[3]);
 	name = argv[1];
 	name += ".replace";
-	std::ofstream ofs(name);
+	std::ofstream ofs(name, std::ios_base::out);
 	if(ofs.fail())
 		return(std::cout << "Create new file Faillure" << std::endl, 1);
 	ofs << buff;
