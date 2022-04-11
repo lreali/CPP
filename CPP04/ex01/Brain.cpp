@@ -2,30 +2,29 @@
 
 Brain::Brain()
 {
+	int i = 0;
+	while (i < 100)
+	{
+		this->_ideas[i] = "Brain typical Ideas";
+		i++;
+	}
 }
 
 Brain::Brain( const Brain & src )
 {
-	*this = src;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = src._ideas[i];
 }
 
 Brain::~Brain()
 {
 }
 
-Brain &	Brain::operator=( Brain const & rhs )
+Brain	&Brain::operator=(const Brain &brain)
 {
-	int i =0;
-
-	if ( this != &rhs )
-	{
-		while (i < 100)
-		{
-			this->_ideas[i] = rhs._ideas[i];
-			i++;
-		}
-	}
-	return *this;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = brain._ideas[i];
+	return (*this);
 }
 
 /*
@@ -41,4 +40,11 @@ void Brain::setIdeas(std::string ideas)
 		i++;
 	}
 }
+//
+std::string Brain::getIdeas(int i)
+{
+	return (_ideas[i]);
+}
+
+
 /* ************************************************************************** */

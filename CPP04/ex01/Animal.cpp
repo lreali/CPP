@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 03:08:36 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/11 05:43:52 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/11 23:12:54 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ void Animal::makeSound() const
 {
 	std::cout << "*Animal classic sound*" << std::endl;
 }
+
+void Animal::PrintIdeas() const
+{}
 
 Animal::~Animal()
 {
