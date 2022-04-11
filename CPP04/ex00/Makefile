@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2022/04/09 19:46:45 by ereali           ###   ########.fr        #
+#    Updated: 2022/04/09 20:40:55 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp 
 
 ##List every .h found inside INC_DIR
 INC =

@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 04:54:52 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/23 05:41:32 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/11 01:28:00 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,7 @@ int main( void )
   std::cout << a.getRawBits() << std::endl;
   std::cout << b.getRawBits() << std::endl;
   std::cout << c.getRawBits() << std::endl;
+  c.setRawBits(12);
+  std::cout << c.getRawBits() << std::endl;
+
 return 0; }

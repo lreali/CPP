@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2022/03/23 05:38:09 by ereali           ###   ########.fr        #
+#    Updated: 2022/04/10 22:46:09 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ CFLAGS =	-MMD -Wall -Wextra -Werror #-g3 #-fsanitize=thread
 IFLAGS =	$(foreach dir, $(INC_DIR), -I $(dir))
 
 ##Define the compiler to use
-CC =	clang++
+CC =	c++
 
 all: $(NAME)
 
