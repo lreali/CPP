@@ -48,7 +48,10 @@ int main()
 	delete j;//should not create a leak
 	delete i;
 	}
-	const Dog zbeub;
 
+	const Dog plip;
+	{
+		Dog plop = plip;
+	}
 	return 0;
 }
