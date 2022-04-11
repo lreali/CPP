@@ -36,7 +36,7 @@ void ScavTrap::attack(const std::string& target)
 {
 	if (_EnergyPoint < 1 || _HitPoint <= 0)
 		return ;
-	std::cout << "ScavTrap "<< _name << " attacks " << target <<", causing " << _AttackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap "<< _name << " attacks " << target <<", causing " << _AttackDamage << " points of damage! OHHHH" << std::endl;
 	_EnergyPoint--;
 }
 
