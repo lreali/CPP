@@ -6,12 +6,13 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 04:30:51 by ereali            #+#    #+#             */
-/*   Updated: 2022/03/20 22:52:04 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/08 23:42:33 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iomanip>
+#include <stdlib.h>
 
 PhoneBook::PhoneBook() : _nbContact(0), _list() {}
 
@@ -48,7 +49,7 @@ void PhoneBook::Search()
 	std::cin >> buff;
 	try
 	{
-		i = std::stoi(buff);
+		i = atoi(buff.data());
 	} catch (std::exception &) {}
 	if (i < 8 && _nbContact > i)
 		std::cout << _list[i].GetFirst() << std::endl << _list[i].GetLast() << std::endl << _list[i].GetNickname() << std::endl << _list[i].GetSecret() << std::endl;

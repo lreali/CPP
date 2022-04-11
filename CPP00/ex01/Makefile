@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 04:55:10 by ereali            #+#    #+#              #
-#    Updated: 2022/03/21 02:06:00 by ereali           ###   ########.fr        #
+#    Updated: 2022/04/08 23:25:37 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ INC =
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 ##Basics flags
-CFLAGS =	-MMD -Wall -Wextra -Werror #-g3 #-fsanitize=thread
+CFLAGS =	-MMD -Wall -Wextra -Werror -std=c++98#-g3 #-fsanitize=thread
 
 ##Create the flags to includes every .h needed by this program
 IFLAGS =	$(foreach dir, $(INC_DIR), -I $(dir))

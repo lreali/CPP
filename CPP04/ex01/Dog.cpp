@@ -1,44 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 03:08:29 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/11 05:40:19 by ereali           ###   ########.fr       */
+/*   Created: 2022/04/11 03:09:02 by ereali            #+#    #+#             */
+/*   Updated: 2022/04/11 06:55:16 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
 
-Cat::Cat()
+Dog::Dog()
 {
-	_type = "Cat";
-	std::cout << "Cat Default constructor called" << std::endl;
+	_type = "Dog";
+	_ideas = new Brain();
+
+	_ideas->setIdeas("Cat ideas");
+
+	std::cout << " Dog Default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &src)
+Dog::Dog(Dog const &src)
 {
 	*this = src;
-	std::cout << "Cat Copy constructor called" << std::endl;
+	std::cout << "Dog Copy constructor called" << std::endl;
 }
 
-Cat & Cat::operator=(Cat const & rhs)
+Dog & Dog::operator=(Dog const & rhs)
 {
 	std::cout << "Copy assignement operator called" << std::endl;
 	_type = rhs._type;
 	return (*this);
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Miaou Miaou 🐱" << std::endl;
+	std::cout << "Waf waf 🐕" << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat Default destructor called" << std::endl;
+	delete _ideas;
+	std::cout << "Dog Default destructor called" << std::endl;
 }
