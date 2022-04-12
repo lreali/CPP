@@ -58,7 +58,7 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 */
 void Form::beSigned(Bureaucrat const &human)
 {
-	if (human.getGrade() =< _signRight)
+	if (human.getGrade() <= _signRight)
 		_sign = 1;
 	else
 		throw Form::GradeTooLowException();
@@ -88,9 +88,9 @@ void 	Form::setSign(bool sign)
 	_sign = sign;
 }
 
-bool 	Form::getName() const
+std::string	Form::getName() const
 {
-	return(_Name);
+	return(_name);
 }
 
 /* ************************************************************************** */

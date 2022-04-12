@@ -6,17 +6,19 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 04:59:21 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/12 08:07:55 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/12 16:20:45 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-// #include "Form.hpp"
+#include "Form.hpp"
 
 # include <stdexcept>
 # include <iostream>
 # include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -45,7 +47,7 @@ class Bureaucrat
 		};
 		void UpGrade();
 		void DownGrade();
-		void signForm(Form const &f);
+		void signForm(Form &f);
 
 		void setGrade(int grade);
 		std::string	getName() const;

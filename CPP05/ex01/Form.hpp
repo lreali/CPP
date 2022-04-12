@@ -5,6 +5,9 @@
 # include <iostream>
 # include <string>
 
+
+class Bureaucrat;
+
 class Form
 {
 
@@ -20,7 +23,7 @@ class Form
 		int	getSignRight() const;
 		bool getSign() const;
 		void setSign(bool sign);
-		bool getName() const;
+		std::string getName() const;
 
 		void beSigned(Bureaucrat const &human);
 
