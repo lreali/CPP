@@ -5,6 +5,9 @@
 # include <iostream>
 # include <string>
 
+
+class Bureaucrat;
+
 class Form
 {
 
@@ -20,8 +23,9 @@ class Form
 		int	getSignRight() const;
 		bool getSign() const;
 		void setSign(bool sign);
-		bool getName() const;
+		std::string getName() const;
 
+		void execute(Bureaucrat const & executor) const;
 		void beSigned(Bureaucrat const &human);
 
 		class GradeTooHighException : public std::exception
@@ -30,7 +34,6 @@ class Form
 			{
 				return ("GradeTooHighException");
 			}
-
 		};
 		class GradeTooLowException : public std::exception
 		{
@@ -39,10 +42,17 @@ class Form
 				 return ("GradeTooLowException");
 			 }
 		};
-
-		~Form();
+		class TriedToExecuteUnsignedForm : public std::exception
+		{
+			virtual const char* what() const throw()
+			{
+				return ("TriedToExecuteUnsignedForm");
+			}
+		};
+		virtual ~Form();
 
 	private:
+		virtual void _OnExecution(Bureaucrat const & executor) const = 0;
 		std::string const _name;
 		bool _sign;
 		int const _execRight;

@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 04:59:30 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/12 06:21:30 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:42:16 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,14 @@ void Bureaucrat::DownGrade()
 	_grade++;
 }
 
-void	Bureaucrat::signForm(Form const &f)
+void	Bureaucrat::signForm(Form &f)
 {
 	if (f.getSign() == 1)
-		std::cout << _name << " couldn't signed " << f.getName() << " because this form is already sign."<< std::endl;
-	else if (f.getSignRight() >= _grade)
+	{
+			std::cout << _name << " couldn't signed " << f.getName() << " because this form is already sign." << std::endl;
+			return;
+	}
+	if (f.getSignRight() >= _grade)
 		std::cout << _name << " signed " << f.getName() << std::endl;
 	else
 		std::cout << _name << " couldn't signed " << f.getName() << " because grade too low."<< std::endl;
@@ -101,6 +104,16 @@ void	Bureaucrat::signForm(Form const &f)
 
 }
 
+void Bureaucrat::executeForm(Form const & form)
+{
+	if (form.getSign() == false)
+		std::cout << _name << " couldn't execute " << form.getName() << " because it's not signed."<< std::endl;
+	else if (form.getExecRight() >= _grade)
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	else
+		std::cout << _name << " couldn't execute " << form.getName() << " because grade too low."<< std::endl;
+	form.execute(*this);
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

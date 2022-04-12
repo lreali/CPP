@@ -4,11 +4,19 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm() :
+Form("PresidentialPardonForm", 5, 25)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
+PresidentialPardonForm::PresidentialPardonForm(std::string target) :
+Form("PresidentialPardonForm", 5, 25),
+_target(target)
+{}
+
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) :
+Form(src.getName(), src.getExecRight(), src.getSignRight()),
+_target(src._target)
 {
 }
 
@@ -26,18 +34,17 @@ PresidentialPardonForm::~PresidentialPardonForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
+PresidentialPardonForm &		PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+
+	_target = rhs._target;
+	setSign(rhs.getSign());
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i )
+std::ostream &		operator<<( std::ostream & o, PresidentialPardonForm const & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "The Form "<< i.getName() << "with target " <<  i.getTarget() <<" have the sign value at "<< i.getSign() << " peut etre signer par les grades " << i.getSignRight() << " peut etre exec par les grades " << i.getExecRight() << "." << std::endl;
 	return o;
 }
 
@@ -46,10 +53,17 @@ std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i 
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
+void PresidentialPardonForm::_OnExecution(Bureaucrat const & executor) const
+{
+	(void)executor;
+	std::cout << _target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
+std::string PresidentialPardonForm::getTarget() const
+{
+	return(_target);
+}
 
 /* ************************************************************************** */

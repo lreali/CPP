@@ -22,9 +22,7 @@ Form::Form(std::string name, int execRight, int signRight) : _name(name) , _sign
 Form::Form( const Form & src ) : _name(src._name) , _sign(0), _execRight(src._execRight), _signRight(src._signRight)
 {
 	std::cout << "Form copy constructor called" << std::endl;
-
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -34,7 +32,6 @@ Form::~Form()
 {
 	std::cout << "Form default destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -58,8 +55,19 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 */
 void Form::beSigned(Bureaucrat const &human)
 {
-	if (human.getGrade() =< _signRight)
+	if (human.getGrade() <= _signRight)
 		_sign = 1;
+	else
+		throw Form::GradeTooLowException();
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+	if (_sign == false)
+		throw Form::TriedToExecuteUnsignedForm();
+
+	if (executor.getGrade() <= _execRight)
+		_OnExecution(executor);
 	else
 		throw Form::GradeTooLowException();
 }
@@ -88,9 +96,9 @@ void 	Form::setSign(bool sign)
 	_sign = sign;
 }
 
-bool 	Form::getName() const
+std::string	Form::getName() const
 {
-	return(_Name);
+	return(_name);
 }
 
 /* ************************************************************************** */
