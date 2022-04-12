@@ -4,13 +4,13 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Form::Form() : _name("Default Form") , _sign(0), _execRight(1), _signRight(1)
+Form::Form() : _name("Default Form") , _sign(false), _execRight(1), _signRight(1)
 {
 	std::cout << "Form default constructor called" << std::endl;
 
 }
 
-Form::Form(std::string name, int execRight, int signRight) : _name(name) , _sign(0), _execRight(execRight), _signRight(signRight)
+Form::Form(std::string name, int execRight, int signRight) : _name(name) , _sign(false), _execRight(execRight), _signRight(signRight)
 {
 	std::cout << "Form constructor called" << std::endl;
 	if (execRight < 1 || signRight < 1)
@@ -19,10 +19,9 @@ Form::Form(std::string name, int execRight, int signRight) : _name(name) , _sign
 		throw Bureaucrat::GradeTooHighException();
 }
 
-Form::Form( const Form & src ) : _name(src._name) , _sign(0), _execRight(src._execRight), _signRight(src._signRight)
+Form::Form( const Form & src ) : _name(src._name) , _sign(false), _execRight(src._execRight), _signRight(src._signRight)
 {
 	std::cout << "Form copy constructor called" << std::endl;
-
 }
 
 
@@ -59,7 +58,7 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 void Form::beSigned(Bureaucrat const &human)
 {
 	if (human.getGrade() <= _signRight)
-		_sign = 1;
+		_sign = true;
 	else
 		throw Form::GradeTooLowException();
 }
