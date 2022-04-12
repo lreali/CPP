@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 04:59:30 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/12 05:06:00 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/12 05:26:41 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,12 @@ int	Bureaucrat::getGrade() const
 	return (_grade);
 }
 
+void Bureaucrat::setGrade(int grade)
+{
+	if (grade < 1)
+		throw Bureaucrat::GradeTooLowException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooHighException();
+	_grade = grade;
+}
 /* ************************************************************************** */

@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 04:59:21 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/12 04:59:24 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/12 05:25:10 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ class Bureaucrat
 		};
 		void UpGrade();
 		void DownGrade();
+
+		void setGrade(int grade);
 		std::string	getName() const;
 		int	getGrade() const;
 
