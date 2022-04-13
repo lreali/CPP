@@ -11,8 +11,8 @@ private:
 
 public:
 	Serializer();
-	Serializer(const Serializer& p_other);
-	const Serializer& operator =(const Serializer& p_other);
+	Serializer(const Serializer& other);
+	const Serializer& operator =(const Serializer& other);
 	~Serializer();
 
 	static uintptr_t serialize(Data* ptr);

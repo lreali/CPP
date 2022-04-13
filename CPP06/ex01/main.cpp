@@ -5,13 +5,13 @@ int main()
 {
 	Data data;
 
-	uintptr_t data_converted;
-	Data* data_ptr;
+	uintptr_t dataConverted;
+	Data* dataPtr;
 
-	data_converted = Serializer::serialize(&data);
-	data_ptr = Serializer::deserialize(data_converted);
+	dataConverted = Serializer::serialize(&data);
+	dataPtr = Serializer::deserialize(dataConverted);
 
-	if (data_ptr != &data)
+	if (dataPtr != &data)
 	{
 		std::cout << "Error" << std::endl;
 	}

@@ -6,14 +6,14 @@ Serializer::Serializer()
 
 }
 
-Serializer::Serializer(const Serializer& p_other)
+Serializer::Serializer(const Serializer& other)
 {
-	(void)p_other;
+	(void)other;
 }
 
-const Serializer& Serializer::operator =(const Serializer& p_other)
+const Serializer& Serializer::operator =(const Serializer& other)
 {
-	(void)p_other;
+	(void)other;
 	return (*this);
 }
 
