@@ -5,7 +5,6 @@
 
 Base::~Base()
 {
-
 }
 
 Base* generate()
@@ -117,6 +116,6 @@ int main()
 		Base& tmpBase = *generate();
 		identify(tmpBase);
 	}
-
+	
 	return(0);
 }
