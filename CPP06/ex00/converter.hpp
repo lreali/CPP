@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 01:12:51 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/13 03:33:54 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/13 08:11:15 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 #include <string>
 #include <iostream>
-#include <cctype>
-
+// #include <cctype>
+#include <cstdlib>
 class Converter
 {
 public:
@@ -39,39 +39,39 @@ public:
 	}Inf;
 
 private:
-	bool _char_validity;
+	bool _charValidity;
 	char _char;
 
-	bool _int_validity;
+	bool _intValidity;
 	int _int;
 
-	bool _float_validity;
-	Inf _float_integrity;
+	bool _floatValidity;
+	Inf _floatIntegrity;
 	float _float;
 
-	bool _double_validity;
-	Inf _double_integrity;
+	bool _doubleValidity;
+	Inf _doubleIntegrity;
 	double _double;
 
-	void _parseChar(std::string p_str);
+	void _parseChar(std::string str);
+	void _parseInt(std::string str);
+	void _parseFloat(std::string str);
+	void _parseDouble(std::string str);
 
-	void _parseInt(std::string p_str);
-
-	void _parseFloat(std::string p_str);
-	void _parseDouble(std::string p_str);
-
-	Type _checkType(std::string p_str);
+	Type _checkType(std::string str);
 
 public:
 	Converter();
-	Converter(std::string p_str);
+	Converter(std::string str);
 	Converter(const Converter& p_other);
-	void parse(std::string p_str);
-	const Converter& operator =(const Converter& p_other);
-	~Converter();
+
+	void parse(std::string str);
 	void printChar();
 	void printInt();
 	void printFloat();
 	void printDouble();
+	const Converter& operator =(const Converter& p_other);
+
+	~Converter();
 };
 #endif

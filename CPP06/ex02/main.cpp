@@ -5,7 +5,6 @@
 
 Base::~Base()
 {
-
 }
 
 Base* generate()
@@ -108,14 +107,16 @@ int main()
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base* tmp_base = generate();
-		identify(tmp_base);
+		Base* tmpBase1 = generate();
+		identify(tmpBase1);
+		delete tmpBase1;
 	}
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base& tmp_base = *generate();
-		identify(tmp_base);
+		Base& tmpBase2 = *generate();
+		identify(tmpBase2);
+		delete &tmpBase2;
 	}
 
 	return(0);

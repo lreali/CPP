@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 04:59:38 by ereali            #+#    #+#             */
-/*   Updated: 2022/04/12 23:49:09 by ereali           ###   ########.fr       */
+/*   Updated: 2022/04/13 07:42:45 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,16 @@ int main()
 
 		Form * plop = i.makeForm("presidential pardon", "The entire World");
 		Form * ploop = i.makeForm("presi pardon", "The entire World");
+		Form * anothershrub = i.makeForm("shrubbery creation", "garden");
 
 		(void)ploop;
 		David.signForm(*plop);
 		David.signForm(a);
 		David.signForm(yeay);
 		David.signForm(b);
+		Pedro.signForm(*anothershrub);
 
 		David.executeForm(*plop);
+		Pedro.executeForm(*anothershrub);
 		delete plop;
 }
