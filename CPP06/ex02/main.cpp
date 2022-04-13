@@ -107,15 +107,17 @@ int main()
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base* tmpBase = generate();
-		identify(tmpBase);
+		Base* tmpBase1 = generate();
+		identify(tmpBase1);
+		delete tmpBase1;
 	}
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base& tmpBase = *generate();
-		identify(tmpBase);
+		Base& tmpBase2 = *generate();
+		identify(tmpBase2);
+		delete &tmpBase2;
 	}
-	
+
 	return(0);
 }
