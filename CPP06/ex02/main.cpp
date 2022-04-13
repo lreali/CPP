@@ -108,14 +108,14 @@ int main()
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base* tmp_base = generate();
-		identify(tmp_base);
+		Base* tmpBase = generate();
+		identify(tmpBase);
 	}
 
 	for (int i = 0; i < 6; i++)
 	{
-		Base& tmp_base = *generate();
-		identify(tmp_base);
+		Base& tmpBase = *generate();
+		identify(tmpBase);
 	}
 
 	return(0);
