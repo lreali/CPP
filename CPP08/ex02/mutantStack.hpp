@@ -11,12 +11,18 @@ public:
 	typedef typename std::stack<T, Container>::container_type::iterator iterator;
 	typedef typename std::stack<T, Container>::container_type::const_iterator const_iterator;
 
-	MutantStack() : std::stack<T, Container>()
+	MutantStack() : std::stack<T, Container>() {};
+	~MutantStack() {};
+	MutantStack(const MutantStack &mstack)
 	{
+		*this = mstack;
 	};
-	~MutantStack()
+
+	MutantStack	&operator=(const MutantStack<T> &mstack)
 	{
-	};
+		static_cast< std::stack<T> >(*this) = static_cast< std::stack<T> >(mstack);
+		return (*this);
+	}
 
 	iterator begin()
 	{
