@@ -74,7 +74,7 @@ int main()
 	object.push(5);
 
 	std::cout << "Result : ";
-	for (MutantStack<int>::iterator it = object.begin(); it != object.end(); it++)
+	for (MutantStack<int>::const_iterator it = object.begin(); it != object.end(); it++)
 	{
 		if (it != object.begin())
 			std::cout << " · ";
