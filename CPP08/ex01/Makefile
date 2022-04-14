@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2022/04/14 09:52:06 by ereali           ###   ########.fr        #
+#    Updated: 2022/04/14 20:22:58 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
-SRC = main.cpp span.cpp
+SRC = main.cpp Span.cpp
 
 ##List every .h found inside INC_DIR
 INC =
