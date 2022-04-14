@@ -7,7 +7,7 @@ int main()
 	Array<char> array_char(4);
 	Array<int> array_int(4);
 	Array<double> array_double(4);
-	
+
 	array_char[0] = 'c';
 	array_char[1] = 'e';
 	array_char[2] = 'c';
@@ -28,11 +28,11 @@ int main()
 	std::cout << std::endl;
 
 	for (size_t i = 0; i < 4; i++)
-		std::cout << array_int[i];
+		std::cout << array_int[i]<< " " ;
 	std::cout << std::endl;
 
 	for (size_t i = 0; i < 4; i++)
-		std::cout << array_double[i];
+		std::cout << array_double[i] << " ";
 	std::cout << std::endl;
 
 	return (0);
