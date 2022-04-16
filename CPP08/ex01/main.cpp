@@ -40,8 +40,8 @@ int main()
 	std::cout << "Large : " << array.longestSpan() << std::endl;
 	array.addNumber(3, 3);
 	other.addNumber(3, 12);
-	test.addNumber(6);
 	test.addNumber(3);
+	test.addNumber(6);
 	test.addNumber(17);
 	test.addNumber(9);
 	test.addNumber(11);

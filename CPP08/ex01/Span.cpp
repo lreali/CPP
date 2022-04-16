@@ -68,5 +68,5 @@ int Span::longestSpan()
 	if (size() <= 1)
 		throw std::logic_error("Span : Internal error - Not enought value to execute a longestSpan call");
 	std::vector<int> tmp(*this);
-	return (*std::max_element(tmp.begin(), tmp.end()) - *std::min_element(tmp.begin() + 1, tmp.end()));
+	return (*std::max_element(tmp.begin(), tmp.end()) - *std::min_element(tmp.begin(), tmp.end()));
 }
