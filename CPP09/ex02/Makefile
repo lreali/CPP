@@ -6,25 +6,25 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2023/03/06 15:33:51 by ereali           ###   ########.fr        #
+#    Updated: 2023/03/07 16:48:16 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
-INC_DIR = 	$(shell find includes -type d)
+# INC_DIR = 	$(shell find includes -type d)
 
 ##List every folder where he will find source file
-SRC_DIR = 	$(shell find srcs -type d)
+# SRC_DIR = 	$(shell find srcs -type d)
 
 ##Folder where he will store the .o
 OBJ_DIR	= obj
 
 ##Add to the vpath the folder find in SRC_DIR
-vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
+# vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
 ##Add to the vpath the folder find in SRC_DIR
-vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
+# vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
 SRC = main.cpp PmergeMe.cpp
@@ -39,7 +39,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 CFLAGS =	-MMD -Wall -Wextra -Werror -std=c++98 #-g3 #-fsanitize=thread
 
 ##Create the flags to includes every .h needed by this program
-IFLAGS =	$(foreach dir, $(INC_DIR), -I $(dir))
+IFLAGS = #	$(foreach dir, $(INC_DIR), -I $(dir))
 
 ##Define the compiler to use
 CC =	c++
