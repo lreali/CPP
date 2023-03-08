@@ -6,25 +6,25 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 04:06:15 by ereali            #+#    #+#              #
-#    Updated: 2023/03/06 15:01:43 by ereali           ###   ########.fr        #
+#    Updated: 2023/03/07 17:58:47 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = RPN
 
-INC_DIR = 	$(shell find includes -type d)
+# INC_DIR = 	$(shell find includes -type d)
 
 ##List every folder where he will find source file
-SRC_DIR = 	$(shell find srcs -type d)
+# SRC_DIR = 	$(shell find srcs -type d)
 
 ##Folder where he will store the .o
 OBJ_DIR	= obj
 
 ##Add to the vpath the folder find in SRC_DIR
-vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
+# vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
 ##Add to the vpath the folder find in SRC_DIR
-vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
+# vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
 SRC = main.cpp RPN.cpp

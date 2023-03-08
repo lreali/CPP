@@ -1,17 +1,25 @@
-#ifndef RPN
-#define RPN
-#include <deque>
+#ifndef RPN_HPP
+#define RPN_HPP
+#include <vector>
 #include <string>
+#include <iostream>
 
 class RPN
 {
-	RPN(std::string rpn);
-	RPN();
-	~RPN();
-	private:
-		std::deque<std::string, int> BitcoinValues;
-	// si canonical manqu operator = et par copy
+	public:
+		RPN( std::string rpn);
+		RPN( RPN const & rpn);
+		RPN &					operator=( RPN const & rhs );
+		int 	getResult() const;
+		bool 	getError() const;
 
+		RPN();
+		~RPN();
+	private:
+		void						_calculate(std::string);
+		std::vector<int>	_expression_digits;
+		int							_result;
+		bool						_error;
 };
 
 #endif
