@@ -26,8 +26,8 @@ class PmergeMe
 	void 						setPriorityQueueSpeed(const std::deque<int> not_sort);
 	PmergeMe();
 	bool						_error;
-	clock_t						_multiset_speed;
-	clock_t 					_priority_queue_speed;
+	double						_multiset_speed;
+	double 						_priority_queue_speed;
 	std::multiset<int> 				_multiset;
 	unsigned int				my_stoi(std::string to_cast);
 	std::priority_queue<int, std::deque<int>, std::greater<int> >	_Pqueue;

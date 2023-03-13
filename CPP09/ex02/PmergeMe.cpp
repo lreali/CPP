@@ -29,10 +29,8 @@ PmergeMe::PmergeMe(int argc, char **argv) : _error(false), _multiset_speed(0), _
 
 	if (_error == false)
 	{
-
 		setPriorityQueueSpeed(not_sort);
 		setMultisetSpeed(not_sort);
-
 	}
 }
 
