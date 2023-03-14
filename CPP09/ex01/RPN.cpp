@@ -8,7 +8,7 @@ RPN::RPN(std::string rpn) : _result(0), _error(false)
 	if (rpn.find_first_not_of("0123456789 +-\t/*") != std::string::npos)
 	{
 		_error = true;
-		std::cout << "Error : find first not of  have failed" << std::endl;
+		std::cout << "Error" << std::endl;
 	}
 	else
 			_calculate(rpn);
