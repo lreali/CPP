@@ -75,7 +75,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const & rhs )
 
 void BitcoinExchange::_calculate_all_result(std::string txt)
 {
-	std::ifstream file(txt);
+	std::ifstream file(txt.c_str());
 
 	if (!file.is_open())
 	{
@@ -99,6 +99,13 @@ void BitcoinExchange::_add_result(std::string str)
 		_result.push_back("Error: bad input => " + str);
 		return;
 	}
+	if ((str.substr(0 , 10)).find_first_not_of("0123456789-") != std::string::npos
+		|| (str.substr(10 , 3)).find_first_not_of(" |") != std::string::npos
+		|| (str.substr(13 , str.size() - 13)).find_first_not_of("0123456789-,.") != std::string::npos )
+	{
+		_result.push_back("Error: bad input => " + str);
+		return;
+	}
 	tmp = my_stod(str.substr(13, str.size() - 13));
 	if (_date_is_good(str.substr(0, 10)) == false || _error == true)
 	{
@@ -106,7 +113,7 @@ void BitcoinExchange::_add_result(std::string str)
 		return;
 	}
 	nearest_date = _find_nearest_date(str.substr(0, 10));
-	if (_error == true)
+	if (_error == true || nearest_date == _BitcoinExchanges.end())
 		_result.push_back("Error: bad input => " + str);
 	if (tmp > 1000)
 		_result.push_back("Error: too large a number.");
@@ -119,12 +126,12 @@ void BitcoinExchange::_add_result(std::string str)
 bool BitcoinExchange::_date_is_good(std::string date)
 {
 	double tmp = my_stod(date.substr(0 ,4));
-	if (_error == true || tmp < 2009 || tmp > 2023)
+	if (_error == true || tmp < 2000 || tmp > 2023)
 		return(false);
 	 tmp = my_stod(date.substr(5 ,2));
 	 if (_error == true || tmp < 1 || tmp > 12)
  		return(false);
-	tmp = my_stod(date.substr(8 ,2));
+	tmp = my_stod(date.substr(8, 2));
 	if (_error == true || tmp < 1 || tmp > 31)
 	   return(false);
 	return(true);
@@ -152,27 +159,21 @@ std::map<std::string, double >::const_iterator	BitcoinExchange::_find_nearest_da
 			break;
 		}
 	}
-	if ((after != _BitcoinExchanges.end() && before == _BitcoinExchanges.end()))
-		return (after);
-	if ((after == _BitcoinExchanges.end() && before != _BitcoinExchanges.end()))
-		return (before);
+	return (before);
 
-	unsigned int diff_before = _date_in_days(date) - _date_in_days(before->first);
-	unsigned int diff_after = _date_in_days(after->first) - _date_in_days(date);
-	return ((diff_before >= diff_after) ? after : before);
 }
-
-unsigned int BitcoinExchange::_date_in_days(std::string date)
-{
-	unsigned int days = 0;
-	unsigned int tmp = my_stoui(date.substr(0 ,4));
-	days = 365 * (tmp - 1);
-	tmp = my_stoui(date.substr(5 ,2));
-	days += 31 * (tmp - 1);
-	tmp = my_stoui(date.substr(8 ,2));
-	days += tmp;
-	return days;
-}
+//
+// unsigned int BitcoinExchange::_date_in_days(std::string date)
+// {
+// 	unsigned int days = 0;
+// 	unsigned int tmp = my_stoui(date.substr(0 ,4));
+// 	days = 365 * (tmp - 1);
+// 	tmp = my_stoui(date.substr(5 ,2));
+// 	days += 31 * (tmp - 1);
+// 	tmp = my_stoui(date.substr(8 ,2));
+// 	days += tmp;
+// 	return days;
+// }
 double BitcoinExchange::my_stod(std::string to_cast)
 {
 	std::stringstream ss;
@@ -202,16 +203,16 @@ std::string BitcoinExchange::my_dtos(double to_cast)
 	return (num);
 }
 
-unsigned int BitcoinExchange::my_stoui(std::string to_cast)
-{
-	std::stringstream ss;
-	unsigned int num;
-	ss << to_cast;
-	ss >> num;
-	if (ss.fail())
-	{
-		_error = true;
-		std::cout << "Error: sstream have failed" << '\n';
-	}
-	return (num);
-}
+// unsigned int BitcoinExchange::my_stoui(std::string to_cast)
+// {
+// 	std::stringstream ss;
+// 	unsigned int num;
+// 	ss << to_cast;
+// 	ss >> num;
+// 	if (ss.fail())
+// 	{
+// 		_error = true;
+// 		std::cout << "Error: sstream have failed" << '\n';
+// 	}
+// 	return (num);
+// }

@@ -24,8 +24,8 @@ class BitcoinExchange
 		void _calculate_all_result(std::string file);
 		bool _date_is_good(std::string date);
 		std::map<std::string, double >::const_iterator	_find_nearest_date(std::string date);
-		unsigned int _date_in_days(std::string date);
-		unsigned int my_stoui(std::string to_cast);
+		// unsigned int _date_in_days(std::string date);
+		// unsigned int my_stoui(std::string to_cast);
 		std::list<std::string> _result;
 		bool	_error;
 		std::map<std::string, double> _BitcoinExchanges;
