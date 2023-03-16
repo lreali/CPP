@@ -11,22 +11,22 @@
 # **************************************************************************** #
 
 NAME = btc
-
-INC_DIR = 	$(shell find includes -type d)
-
-##List every folder where he will find source file
-SRC_DIR = 	$(shell find srcs -type d)
-
-##Folder where he will store the .o
+#
+# INC_DIR = 	$(shell find includes -type d)
+#
+# ##List every folder where he will find source file
+# SRC_DIR = 	$(shell find srcs -type d)
+#
+# ##Folder where he will store the .o
 OBJ_DIR	= obj
-
-##Add to the vpath the folder find in SRC_DIR
-vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
-
-##Add to the vpath the folder find in SRC_DIR
-vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
-
-##List every .c found inside SRC_DIR
+#
+# ##Add to the vpath the folder find in SRC_DIR
+# vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
+#
+# ##Add to the vpath the folder find in SRC_DIR
+# vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
+#
+# ##List every .c found inside SRC_DIR
 SRC = main.cpp BitcoinExchange.cpp
 
 ##List every .h found inside INC_DIR

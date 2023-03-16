@@ -84,12 +84,14 @@ void	RPN::_calculate(std::string expr)
 
 RPN::RPN(RPN const & rpn)
 {
+	_expression_digits = rpn._expression_digits;
 	_error = rpn._error;
 	_result = rpn._result;
 }
 
 RPN &					RPN::operator=( RPN const & rhs )
 {
+	_expression_digits = rhs._expression_digits;
 	_error = rhs._error;
 	_result = rhs._result;
 	return (*this);

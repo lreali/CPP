@@ -10,22 +10,11 @@ PmergeMe::PmergeMe(int argc, char **argv) : _error(false), _multiset_speed(0), _
 		if (args[i -1].find_first_not_of("0123456789") != std::string::npos)
 		{
 			_error = true;
-			// std::cout << "find first not of  have failed" << '\n';
 		}
 		not_sort.push_back(my_stoi(args[i - 1]));
 		if (not_sort[i - 1] < 0)
 			_error = true;
 	}
-
-	// print before
-	// for (size_t i = 0; i < not_sort.size() ; i++)
-	// {
-	// 	std::cout << not_sort[i];
-	// 	if (i != not_sort.size() - 1)
-	// 		std::cout << " ";
-	// 	else
-	// 		std::cout << std::endl;
-	// }
 
 	if (_error == false)
 	{
@@ -111,7 +100,6 @@ unsigned int PmergeMe::my_stoi(std::string to_cast)
 	if (ss.fail())
 	{
 		_error = true;
-		// std::cout << "sstream have failed" << '\n';
 	}
 	return (num);
 }
